@@ -1,0 +1,35 @@
+### register
+# @no-log
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "pass"
+}
+
+### test
+# @no-log
+GET http://localhost:8080/test
+Authorization: Basic user pass1
+
+### delete user
+# @no-log
+DELETE http://localhost:8080/api/auth
+Content-Type: application/json
+Authorization: Basic bcd bcd
+
+{
+  "username": "user1"
+}
+
+### change password
+# @no-log
+PATCH http://localhost:8080/api/auth
+Content-Type: application/json
+Authorization: Basic user pass1
+
+{
+  "oldPassword": "pass1",
+  "newPassword": "pa"
+}
